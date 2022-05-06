@@ -1,11 +1,11 @@
 <script>
 	import '../app.css';
 
-    let mobileMenuOpen = false;
+	let mobileMenuOpen = false;
 
-    function toggleMobileMenu() {
-        mobileMenuOpen = !mobileMenuOpen;
-    }
+	function toggleMobileMenu() {
+		mobileMenuOpen = !mobileMenuOpen;
+	}
 </script>
 
 <div class="min-h-full">
@@ -38,14 +38,14 @@
 									>
 
 									<a
-										href="#"
+										href="/"
 										class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
 										>Projects</a
 									>
 
 									<a
 										href="http://164.90.152.35/xyz/customer/login"
-										   class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+										class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
 										>Customer portal</a
 									>
 
@@ -61,7 +61,7 @@
 							<!-- Mobile menu button -->
 							<button
 								type="button"
-                                on:click={toggleMobileMenu}
+								on:click={toggleMobileMenu}
 								class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
 								aria-controls="mobile-menu"
 								aria-expanded="false"
@@ -73,7 +73,7 @@
                                   Menu open: "hidden", Menu closed: "block"
                                 -->
 								<svg
-									class="{!mobileMenuOpen ? 'block h-6 w-6' : 'hidden'}"
+									class={!mobileMenuOpen ? 'block h-6 w-6' : 'hidden'}
 									xmlns="http://www.w3.org/2000/svg"
 									fill="none"
 									viewBox="0 0 24 24"
@@ -93,7 +93,7 @@
                                   Menu open: "block", Menu closed: "hidden"
                                 -->
 								<svg
-									class="{mobileMenuOpen ? 'block h-6 w-6' : 'hidden'}"
+									class={mobileMenuOpen ? 'block h-6 w-6' : 'hidden'}
 									xmlns="http://www.w3.org/2000/svg"
 									fill="none"
 									viewBox="0 0 24 24"
@@ -110,46 +110,45 @@
 			</div>
 
 			<!-- Mobile menu, show/hide based on menu state. -->
-            {#if mobileMenuOpen }
-			<div class="border-b border-gray-700 md:hidden" id="mobile-menu">
-				<div class="px-2 py-3 space-y-1 sm:px-3">
-					<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-					<a
-						href="/"
-						class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-						aria-current="page">Home</a
-					>
+			{#if mobileMenuOpen}
+				<div class="border-b border-gray-700 md:hidden" id="mobile-menu">
+					<div class="px-2 py-3 space-y-1 sm:px-3">
+						<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+						<a
+							href="/"
+							class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+							aria-current="page">Home</a
+						>
 
-					<a
-						href="/about"
-						class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-						>About</a
-					>
+						<a
+							href="/about"
+							class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+							>About</a
+						>
 
-					<a
-						href="#"
-						class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-						>Projects</a
-					>
+						<a
+							href="/"
+							class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+							>Projects</a
+						>
 
-					<a
-						href="http://164.90.152.35/xyz/customer/login"
-						class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-						>Customer Portal</a
-					>
+						<a
+							href="http://164.90.152.35/xyz/customer/login"
+							class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+							>Customer Portal</a
+						>
 
-					<a
-						href="/contact"
-						class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-						>Say Hi</a
-					>
+						<a
+							href="/contact"
+							class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+							>Say Hi</a
+						>
+					</div>
 				</div>
-			</div>
-            {/if}
+			{/if}
 		</nav>
 		<header class="py-10">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			</div>
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" />
 		</header>
 	</div>
 
