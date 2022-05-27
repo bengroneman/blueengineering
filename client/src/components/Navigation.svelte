@@ -1,4 +1,6 @@
 <script>
+	import { afterNavigate } from '$app/navigation';
+
 	let mobileMenuOpen = false;
 	export let navItems = [
 		{
@@ -22,6 +24,12 @@
 			title: 'Customer Portal'
 		}
 	];
+	let selectedNavItem = navItems[0];
+
+	afterNavigate(navigation => {
+		selectedNavItem = navItems.filter(item => item.url === navigation.to.pathname)[0];
+	});
+
 	function toggleMobileMenu() {
 		mobileMenuOpen = !mobileMenuOpen;
 	}
@@ -45,7 +53,7 @@
 							{#each navItems as item}
 								<a
 									href={item.url}
-									class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+									class={item.url === selectedNavItem.url ? "bg-gray-900 text-white px-3 py-2 rounded-md font-medium" : "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"}
 									aria-current="page">{item.title}</a
 								>
 							{/each}
@@ -110,30 +118,13 @@
 					class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
 					aria-current="page">Home</a
 				>
-
-				<a
-					href="/about"
-					class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-					>About</a
-				>
-
-				<a
-					href="/"
-					class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-					>Projects</a
-				>
-
-				<a
-					href="http://164.90.152.35/xyz/customer/login"
-					class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-					>Customer Portal</a
-				>
-
-				<a
-					href="/contact"
-					class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-					>Say Hi</a
-				>
+				{#each navItems as item}
+					<a
+						href={item.url}
+						class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+						aria-current="page">{item.title}</a
+					>
+				{/each}
 			</div>
 		</div>
 	{/if}
