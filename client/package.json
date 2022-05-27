@@ -36,6 +36,5 @@
 		"typescript": "~4.6.2"
 	},
 	"type": "module",
-	"dependencies": {
-	}
+	"dependencies": {}
 }
