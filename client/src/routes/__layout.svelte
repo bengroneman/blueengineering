@@ -1,5 +1,9 @@
 <script>
+	// Assets
 	import '../app.css';
+
+	// Utils
+	import { aboutContent } from '../store';
 
 	let mobileMenuOpen = false;
 

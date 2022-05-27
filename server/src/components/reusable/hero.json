@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_reusable_heroes",
+  "info": {
+    "displayName": "Hero",
+    "icon": "kiss"
+  },
+  "options": {},
+  "attributes": {
+    "Header": {
+      "type": "string"
+    },
+    "subHeader": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "richtext"
+    },
+    "Asset": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
