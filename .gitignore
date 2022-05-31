@@ -121,4 +121,4 @@ node_modules
 .env
 .env.*
 !.env.example
-*/**/.svelte-kit
+.svelte-kit
