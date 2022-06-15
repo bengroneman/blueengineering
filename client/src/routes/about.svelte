@@ -13,8 +13,8 @@
 			}
 		};
 		try {
-			const data = await fetch('http://localhost:1337/api/about?populate=*', options).then((res) =>
-				res.json()
+			const data = await fetch('http://164.90.152.35:4082/api/about?populate=*', options).then(
+				(res) => res.json()
 			);
 			aboutContent.set(data);
 			loading = false;

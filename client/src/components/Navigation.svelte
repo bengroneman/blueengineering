@@ -26,8 +26,8 @@
 	];
 	let selectedNavItem = navItems[0];
 
-	afterNavigate(navigation => {
-		selectedNavItem = navItems.filter(item => item.url === navigation.to.pathname)[0];
+	afterNavigate((navigation) => {
+		selectedNavItem = navItems.filter((item) => item.url === navigation.to.pathname)[0];
 	});
 
 	function toggleMobileMenu() {
@@ -46,7 +46,9 @@
 							{#each navItems as item}
 								<a
 									href={item.url}
-									class={item.url === selectedNavItem.url ? "bg-gray-900 text-white px-3 py-2 rounded-md font-medium" : "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"}
+									class={item.url === selectedNavItem.url
+										? 'bg-gray-900 text-white px-3 py-2 rounded-md font-medium'
+										: 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'}
 									aria-current="page">{item.title}</a
 								>
 							{/each}
